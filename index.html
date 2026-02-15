@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<body onclick="play()" style="margin:0;background:black;height:100vh;display:flex;justify-content:center;align-items:center;color:white;font-size:28px;font-family:sans-serif;">
+<body style="margin:0;background:black;height:100vh;display:flex;justify-content:center;align-items:center;color:white;font-size:28px;font-family:sans-serif;">
 <div>I lied</div>
 
 <video id="v" style="display:none" playsinline>
@@ -8,13 +8,23 @@
 </video>
 
 <script>
+let started = false;
+
 function play() {
+  if (started) return;
+  started = true;
+
   let v = document.getElementById("v");
   document.body.innerHTML = "";
   document.body.appendChild(v);
   v.style.display = "block";
   v.play();
 }
+
+document.addEventListener("click", play);
+document.addEventListener("touchstart", play);
+document.addEventListener("scroll", play);
+
 </script>
 
 </body>
