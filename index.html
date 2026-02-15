@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body onclick="play()" style="margin:0;background:black;height:100vh;display:flex;justify-content:center;align-items:center;color:white;font-size:28px;font-family:sans-serif;">
+<div>I lied</div>
+
+<video id="v" style="display:none" playsinline>
+  <source src="aa2.mp4" type="video/mp4">
+</video>
+
+<script>
+function play() {
+  let v = document.getElementById("v");
+  document.body.innerHTML = "";
+  document.body.appendChild(v);
+  v.style.display = "block";
+  v.play();
+}
+</script>
+
+</body>
+</html>
